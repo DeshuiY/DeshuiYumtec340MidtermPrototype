@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockCounterText: {fileID: 928368702}
-  timerText: {fileID: 0}
+  timerText: {fileID: 251546664}
 --- !u!61 &716437312
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2251,7 +2251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockCounterText: {fileID: 928368702}
-  timerText: {fileID: 0}
+  timerText: {fileID: 251546664}
 --- !u!1 &1714468650
 GameObject:
   m_ObjectHideFlags: 0
