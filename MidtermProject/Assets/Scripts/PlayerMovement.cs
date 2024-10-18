@@ -1,12 +1,14 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;  // For scene reloading or Game Over logic
+using UnityEngine.SceneManagement;  
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;     
+    public float moveSpeed = 5f;  
+    
     public float jumpForce = 7f;    
     
-    private Rigidbody2D rb;          
+    private Rigidbody2D rb;    
+    
     private bool isGrounded = true;  
 
     void Start()
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
         HandleMovement();  
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+            
         {
             Jump();
         }
@@ -27,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
     void HandleMovement()
     {
         float move = Input.GetAxis("Horizontal");  
+        
+        
+        
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);  
     }
 
@@ -40,6 +46,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Block") || collision.gameObject.CompareTag("Ground"))
         {
+            
+            
+            
             isGrounded = true;  
         }
 
@@ -47,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Rigidbody2D blockRb = collision.gameObject.GetComponent<Rigidbody2D>();
 
-            if (blockRb != null && blockRb.velocity.y < -1f)  // Check if block is falling
+            if (blockRb != null && blockRb.velocity.y < -1f)  
             {
                 GameOver();
             }
