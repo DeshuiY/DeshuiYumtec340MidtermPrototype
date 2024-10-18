@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bean
+  - Block
+  - Boundary
+  - Ground
   layers:
   - Default
   - TransparentFX
