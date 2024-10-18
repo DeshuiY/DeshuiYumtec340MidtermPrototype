@@ -1,33 +1,40 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
+using System.Collections.Generic;
 
 public class BlockCounterManager : MonoBehaviour
 {
-    public Text blockCounterText;
+    public TMP_Text blockCounterText;
     public string blockTag = "Block";
     public Collider2D boundary;
 
+    private int blockCount = 0;
+
     void Update()
     {
-        if (blockCounterText != null && boundary != null)
+        blockCounterText.text = "Blocks: " + blockCount;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag(blockTag))
         {
-            UpdateBlockCount();
+            blockCount++;
+            UpdateBlockCountUI();
         }
     }
 
-    void UpdateBlockCount()
+    void OnTriggerExit2D(Collider2D other)
     {
-        GameObject[] blocks = GameObject.FindGameObjectsWithTag(blockTag);
-        int blockCountInBoundary = 0;
-
-        foreach (GameObject block in blocks)
+        if (other.CompareTag(blockTag) && blockCount > 0)
         {
-            if (boundary.bounds.Contains(block.transform.position))
-            {
-                blockCountInBoundary++;
-            }
+            blockCount--;
+            UpdateBlockCountUI();
         }
+    }
 
-        blockCounterText.text = "Blocks: " + blockCountInBoundary;
+    void UpdateBlockCountUI()
+    {
+        blockCounterText.text = "Blocks: " + blockCount;
     }
 }
