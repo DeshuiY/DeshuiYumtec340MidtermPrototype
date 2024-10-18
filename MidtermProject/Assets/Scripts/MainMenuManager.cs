@@ -42,6 +42,6 @@ public class MainMenuManager : MonoBehaviour
     {
         
         
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("GameTutorialScene");
     }
 }
