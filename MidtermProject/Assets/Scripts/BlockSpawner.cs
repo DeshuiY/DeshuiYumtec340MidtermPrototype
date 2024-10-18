@@ -3,8 +3,9 @@ using UnityEngine;
 public class BlockSpawner : MonoBehaviour
 {
     public GameObject blockPrefab;
-    public float spawnInterval = 2f; // Time between block spawns
-    public float spawnXRange = 8f; // Adjust based on screen size
+    public float spawnInterval = 2f; 
+    
+    public float spawnXRange = 8f;
 
     void Start()
     {
