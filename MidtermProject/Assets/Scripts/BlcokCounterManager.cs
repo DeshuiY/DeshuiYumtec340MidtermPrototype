@@ -6,16 +6,26 @@ public class BlockCounterManager : MonoBehaviour
 {
     public TMP_Text blockCounterText;
     public TMP_Text timerText;
+    public BlockSpawner2 blockSpawner;  
 
     private int blockCount = 0;
-    private float timeRemaining = 60f;
+    private float timeRemaining = 70f;
     private bool timerIsRunning = true;
+    private bool spawnerStarted = false;
 
     void Start()
     {
+        // 检查 UI 组件是否已赋值
         if (blockCounterText == null || timerText == null)
         {
             Debug.LogError("UI Text is not assigned in the Inspector!");
+            return;
+        }
+
+        // 检查 BlockSpawner2 是否已赋值
+        if (blockSpawner == null)
+        {
+            Debug.LogError("BlockSpawner2 is not assigned in the Inspector!");
             return;
         }
 
@@ -31,6 +41,13 @@ public class BlockCounterManager : MonoBehaviour
             {
                 timeRemaining -= Time.deltaTime;
                 UpdateTimerUI();
+
+                
+                if (timeRemaining <= 50f && !spawnerStarted)
+                {
+                    spawnerStarted = true;
+                    blockSpawner.StartSpawning();  
+                }
             }
             else
             {
@@ -67,6 +84,7 @@ public class BlockCounterManager : MonoBehaviour
 
     void TimerEnded()
     {
+        Debug.Log("Time's up! Restarting the scene...");
         SceneManager.LoadScene("GameScene");
     }
 }

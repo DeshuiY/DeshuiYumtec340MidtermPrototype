@@ -11,8 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameTutorialScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/GameScene.unity
+  - enabled: 0
+    path: Assets/Scenes/CongratulationScene.unity
     guid: 454b94fa26a314724b74df1e6c287139
   - enabled: 0
     path: Assets/Scenes/CreditScene.unity

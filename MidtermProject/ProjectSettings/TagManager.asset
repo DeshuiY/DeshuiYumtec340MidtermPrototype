@@ -8,6 +8,7 @@ TagManager:
   - Block
   - Boundary
   - Ground
+  - Door
   layers:
   - Default
   - TransparentFX
