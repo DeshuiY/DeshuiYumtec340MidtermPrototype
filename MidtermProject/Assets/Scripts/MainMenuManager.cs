@@ -6,7 +6,7 @@ using System.Collections;
 public class MainMenuManager : MonoBehaviour
 {
     public TMP_Text pressToPlayText;
-
+  
     void Start()
     {
         StartCoroutine(BlinkText());

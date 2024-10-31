@@ -287,7 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockCounterText: {fileID: 928368702}
   timerText: {fileID: 251546664}
-  blockSpawner: {fileID: 1302394492}
+  blockSpawner: {fileID: 0}
 --- !u!4 &205415573
 Transform:
   m_ObjectHideFlags: 0
@@ -674,7 +674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockCounterText: {fileID: 928368702}
   timerText: {fileID: 251546664}
-  blockSpawner: {fileID: 1302394492}
+  blockSpawner: {fileID: 0}
 --- !u!61 &716437312
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1726,7 +1726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1302394493}
-  - component: {fileID: 1302394492}
+  - component: {fileID: 1302394494}
   m_Layer: 0
   m_Name: BlockSpawner2
   m_TagString: Untagged
@@ -1734,20 +1734,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1302394492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302394491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 217c3f9d7345f49cea7850fa7e0e4db9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockPrefab: {fileID: 5073543043728136044, guid: 9b33dc7df044749cfab46cd1470fee34, type: 3}
-  spawnInterval: 5
 --- !u!4 &1302394493
 Transform:
   m_ObjectHideFlags: 0
@@ -1757,12 +1743,27 @@ Transform:
   m_GameObject: {fileID: 1302394491}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 5.9, z: 0}
+  m_LocalPosition: {x: 2.98, y: 5.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1302394494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302394491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d426302cda25f466b945cb4cca27ef93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockPrefab: {fileID: 5073543043728136044, guid: 9b33dc7df044749cfab46cd1470fee34, type: 3}
+  spawnInterval: 15
+  spawnXRange: 4
 --- !u!1 &1372849905
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,7 +2091,7 @@ GameObject:
   - component: {fileID: 1554892436}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2120,8 +2121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118d234a0110f9e43b3a2751e218681d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 5
+  moveSpeed: 6
+  jumpForce: 15
 --- !u!58 &1554892438
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2154,7 +2155,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02, y: 0.005}
+  m_Offset: {x: -0.02, y: 0.009}
   serializedVersion: 2
   m_Radius: 0.055
 --- !u!50 &1554892439
@@ -2397,7 +2398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockCounterText: {fileID: 928368702}
   timerText: {fileID: 251546664}
-  blockSpawner: {fileID: 1302394492}
+  blockSpawner: {fileID: 0}
 --- !u!1 &1714468650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2855,7 +2856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: CongratulationScene
-  requiredHeight: 1
+  requiredHeight: 3.16
 --- !u!212 &1821182200
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2962,8 +2963,55 @@ Transform:
   m_GameObject: {fileID: 1821182198}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.46, z: 0}
+  m_LocalPosition: {x: 0, y: 3.16, z: 0}
   m_LocalScale: {x: 2.47, y: 2.34, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2011979853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011979855}
+  - component: {fileID: 2011979854}
+  m_Layer: 0
+  m_Name: BlockSpawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2011979854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011979853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9205ab8d1a9952d4fba7e3f6d94a233b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockPrefab: {fileID: 5073543043728136044, guid: 3635ccb983aad409796151512a39c210, type: 3}
+  spawnInterval: 5
+  spawnXRange: 6
+--- !u!4 &2011979855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011979853}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.58, y: 6.64, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3060,6 +3108,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1554892441}
   - {fileID: 1372849907}
+  - {fileID: 2011979855}
   - {fileID: 1302394493}
   - {fileID: 2111931455}
   - {fileID: 1785363948}

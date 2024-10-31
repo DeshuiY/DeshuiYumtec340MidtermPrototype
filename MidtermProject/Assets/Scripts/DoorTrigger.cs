@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class DoorTrigger : MonoBehaviour
 {
     public string nextSceneName;  
-    public float requiredHeight = 5f;  
+    public float requiredHeight = 1f;  
 
     void OnTriggerEnter2D(Collider2D other)
     {

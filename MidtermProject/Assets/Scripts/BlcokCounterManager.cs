@@ -15,14 +15,14 @@ public class BlockCounterManager : MonoBehaviour
 
     void Start()
     {
-        // 检查 UI 组件是否已赋值
+        
         if (blockCounterText == null || timerText == null)
         {
             Debug.LogError("UI Text is not assigned in the Inspector!");
             return;
         }
 
-        // 检查 BlockSpawner2 是否已赋值
+        
         if (blockSpawner == null)
         {
             Debug.LogError("BlockSpawner2 is not assigned in the Inspector!");
@@ -85,6 +85,6 @@ public class BlockCounterManager : MonoBehaviour
     void TimerEnded()
     {
         Debug.Log("Time's up! Restarting the scene...");
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("CongratulationScene");
     }
 }
